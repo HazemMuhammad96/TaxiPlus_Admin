@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextFieldPrimary" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Component.Rounded</item>
+        <item name="boxBackgroundColor">@color/surface</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/corner_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/corner_radius</item>
+        <item name="boxCornerRadiusTopStart">@dimen/corner_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/corner_radius</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="errorEnabled">true</item>
+        <item name="android:textColorHighlight">@color/primary</item>
+        <item name="boxStrokeWidthFocused">1.5dp</item>
+        <item name="hintEnabled">false</item>
+    </style>
+
+    <style name="TextFieldVerificationCodeDigit" parent="TextFieldPrimary">
+        <item name="android:layout_width">@dimen/size_verificationDigit</item>
+        <item name="android:layout_height">@dimen/size_verificationDigit</item>
+        <item name="android:layout_margin">@dimen/margin_verificationDigit</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+</resources>

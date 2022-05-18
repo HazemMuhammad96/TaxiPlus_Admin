@@ -1,0 +1,32 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.TaxiPlusAdmin" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+        <item name="colorOnPrimary">@color/onPrimary</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="android:textColor">@color/onBackground</item>
+        <item name="colorSecondary">@color/primary</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSurface">@color/surface</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/background</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+
+        <!-- Components. -->
+
+        <item name="android:buttonStyle">@style/ButtonPrimary</item>
+        <item name="buttonStyle">@style/ButtonPrimary</item>
+        <item name="android:textViewStyle">@style/TextViewPrimary</item>
+    </style>
+
+    <style name="Theme.TaxiPlusAdmin.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.TaxiPlusAdmin.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.TaxiPlusAdmin.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

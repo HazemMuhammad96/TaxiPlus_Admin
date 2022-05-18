@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_drivers"
+            android:icon="@drawable/ic_person"
+            android:title="Drivers List" />
+
+        <item
+            android:id="@+id/nav_drivers_requests"
+            android:icon="@drawable/ic_list"
+            android:title="Drivers Request" />
+
+        <item
+            android:id="@+id/nav_cars"
+            android:icon="@drawable/ic_car"
+            android:title="Cars List" />
+
+        <item
+            android:id="@+id/nav_complains"
+            android:icon="@drawable/ic_warning"
+            android:title="Complains List" />
+    </group>
+</menu>
