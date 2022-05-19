@@ -12,26 +12,17 @@
         android:padding="20dp">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/carImage"
             android:layout_width="100dp"
-            android:layout_height="30dp"
-            app:srcCompat="@drawable/ic_baseline_person_24" />
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_baseline_directions_car_24" />
 
         <TextView
-            android:id="@+id/driverName"
+            android:id="@+id/carName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:padding="3dp"
-            android:text="Driver Name : " />
+            android:layout_weight="1"
+            android:text="TextView" />
 
-        <TextView
-            android:id="@+id/carModel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:padding="3dp"
-            android:text="Car Model :" />
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>
