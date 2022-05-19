@@ -26,12 +26,22 @@
             android:text="Driver Name : " />
 
         <TextView
+            android:id="@+id/driverAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:padding="3dp"
+            android:text="age" />
+
+        <TextView
             android:id="@+id/carModel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:padding="3dp"
             android:text="Car Model :" />
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

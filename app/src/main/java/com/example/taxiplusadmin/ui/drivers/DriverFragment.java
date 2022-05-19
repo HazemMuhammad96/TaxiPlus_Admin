@@ -17,7 +17,7 @@ public class DriverFragment extends Fragment {
     public DriverFragment() {
         super(R.layout.fragment_drivers);
     }
-    ArrayList<String>drivers=new ArrayList<>();
+    ArrayList<Driver>drivers=new ArrayList<>();
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -30,9 +30,11 @@ public class DriverFragment extends Fragment {
     }
 
   void intializeArrayList(){
-        drivers.add("Ahmed");
-      drivers.add("hazem trash");
-      drivers.add("bakar el 2amr");
+        drivers.add(new Driver("Ziad Tarek",25,"BMW"));
+        drivers.add(new Driver("hma hazem",27,"mercedes"));
+      drivers.add(new Driver("hma wael",23,"toyota"));
+
+
   }
 
 

@@ -1,4 +1,4 @@
-package com.example.taxiplusadmin;
+package com.example.taxiplusadmin.ui.complains;
 
 public class Complaint {
     private int ID;

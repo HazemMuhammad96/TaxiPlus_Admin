@@ -13,8 +13,8 @@ import com.example.taxiplusadmin.R;
 import java.util.ArrayList;
 
 public class DriverListAdapter extends RecyclerView.Adapter<DriverListAdapter.DriverViewHolder> {
-    ArrayList<String> drivers;
-    public DriverListAdapter(ArrayList<String>drivers){
+    ArrayList<Driver> drivers;
+    public DriverListAdapter(ArrayList<Driver>drivers){
         this.drivers=drivers;
     }
     @NonNull
@@ -25,7 +25,9 @@ public class DriverListAdapter extends RecyclerView.Adapter<DriverListAdapter.Dr
 
     @Override
     public void onBindViewHolder(@NonNull DriverListAdapter.DriverViewHolder holder, int position) {
-        holder.bindViews(drivers.get(position));
+        holder.driverName.setText(drivers.get(position).getName());
+        holder.driverAge.setText(drivers.get(position).getAge()+"");
+        holder.carModel.setText(drivers.get(position).getCar());
     }
 
     @Override
@@ -34,13 +36,13 @@ public class DriverListAdapter extends RecyclerView.Adapter<DriverListAdapter.Dr
     }
 
     public class DriverViewHolder extends RecyclerView.ViewHolder {
-        TextView DriverInfo;
+        TextView driverName,driverAge,carModel;
         public DriverViewHolder(@NonNull View itemView) {
             super(itemView);
-            DriverInfo=itemView.findViewById(R.id.driverName);
+            driverName=itemView.findViewById(R.id.driverName);
+            driverAge=itemView.findViewById(R.id.driverAge);
+            carModel=itemView.findViewById(R.id.carModel);
         }
-        void bindViews(String currentObject){
-            DriverInfo.setText(currentObject);
-        }
+
     }
 }

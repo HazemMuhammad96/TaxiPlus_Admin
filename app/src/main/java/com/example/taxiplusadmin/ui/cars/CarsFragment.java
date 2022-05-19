@@ -15,13 +15,13 @@ import java.util.ArrayList;
 
 public class CarsFragment extends Fragment {
 
-    ArrayList<String>cars=new ArrayList<>();
+    ArrayList<Car>car=new ArrayList<>();
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        intializeArrayList();
-        CarListAdapter carAdapter=new CarListAdapter(cars);
+        initialize();
+        CarListAdapter carAdapter=new CarListAdapter(car);
         RecyclerView rCar=view.findViewById(R.id.carRecyclerView);
         rCar.setAdapter(carAdapter);
         rCar.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -31,12 +31,14 @@ public class CarsFragment extends Fragment {
         super(R.layout.fragment_cars);
     }
 
+    void initialize(){
+        car.add(new Car("heyundai","1234"));
+        car.add(new Car("BMW","25353"));
+        car.add(new Car("Mercedes","2123"));
 
-    void intializeArrayList(){
-        cars.add("toyota");
-        cars.add("heyundai");
-        cars.add("hounda");
+
     }
+
 
 
 }

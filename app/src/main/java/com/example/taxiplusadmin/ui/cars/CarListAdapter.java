@@ -13,8 +13,8 @@ import com.example.taxiplusadmin.R;
 import java.util.ArrayList;
 
 public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.CarViewHolder> {
-    ArrayList<String>cars;
-    public CarListAdapter(ArrayList<String>cars){
+    ArrayList<Car>cars;
+    public CarListAdapter(ArrayList<Car> cars){
         this.cars=cars;
     }
     @NonNull
@@ -25,7 +25,8 @@ public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.CarViewH
 
     @Override
     public void onBindViewHolder(@NonNull CarViewHolder holder, int position) {
-        holder.bindViews(cars.get(position));
+        holder.carBrand.setText( cars.get(position).getCarBrand());
+        holder.licenseNumber.setText( cars.get(position).getLicenseNumber());
     }
 
     @Override
@@ -34,13 +35,12 @@ public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.CarViewH
     }
 
     public class CarViewHolder extends RecyclerView.ViewHolder {
-        TextView carModel;
+        TextView carBrand,licenseNumber;
         public CarViewHolder(@NonNull View itemView) {
             super(itemView);
-            carModel=itemView.findViewById(R.id.carName);
+            carBrand=itemView.findViewById(R.id.carName);
+            licenseNumber=itemView.findViewById(R.id.licenseNumber);
         }
-        void bindViews(String currentObject){
-            carModel.setText(currentObject);
-        }
+
     }
 }
