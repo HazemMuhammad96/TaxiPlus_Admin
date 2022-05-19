@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         android:paddingHorizontal="5dp"
         android:paddingVertical="5dp"
@@ -19,15 +19,18 @@
             android:text="Name"
             android:gravity="start"
             />
+
         <TextView
+            android:id="@+id/complain_TXT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/complain_TXT"
+            android:layout_marginTop="4dp"
             android:text="Complain"
-            app:layout_constraintTop_toBottomOf="@id/issued_Name"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/date_TXT"
-            />
+            app:layout_constraintHorizontal_bias="0.479"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/issued_Name" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

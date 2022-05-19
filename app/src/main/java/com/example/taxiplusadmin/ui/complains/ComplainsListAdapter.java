@@ -8,38 +8,37 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.taxiplusadmin.Complaint;
 import com.example.taxiplusadmin.R;
 
 import java.util.ArrayList;
 
 public class ComplainsListAdapter extends RecyclerView.Adapter<ComplainsListAdapter.ComplainListHolder> {
 
-    ArrayList<String> Name,Date,Complain;
-    ComplainsListAdapter(ArrayList<String> NameList,ArrayList<String>dateList,ArrayList<String>complainList)
+    ArrayList<Complaint> complaints;
+    public ComplainsListAdapter(ArrayList<Complaint> complaints)
     {
-        this.Name = NameList;
-        this.Date =  dateList;
-        this.Complain = complainList;
-
+        this.complaints=complaints;
     }
     @NonNull
     @Override
     public ComplainListHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-
-        return new ComplainsListAdapter.ComplainListHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.complain_list_item,parent,false));
+    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.complain_list_item, parent,false);
+      return new ComplainListHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ComplainListHolder holder, int position) {
-        holder.bindNameViews(this.Name.get(position));
-        holder.bindDateViews(this.Date.get(position));
-        holder.bindComplainViews(this.Complain.get(position));
+        holder.complain_TXT.setText(complaints.get(position).getProblem());
+        holder.date_TXT.setText(complaints.get(position).getDate());
+        //holder.complain_TXT.setText(complaints.get(position).getID());
+        holder.name_TXT.setText(complaints.get(position).getName());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return complaints.size();
     }
 
     public class ComplainListHolder extends RecyclerView.ViewHolder {
@@ -54,15 +53,7 @@ public class ComplainsListAdapter extends RecyclerView.Adapter<ComplainsListAdap
             complain_TXT = itemView.findViewById(R.id.complain_TXT);
         }
 
-        void bindNameViews(String currentObject){
-            name_TXT.setText(currentObject);
-        }
-        void bindDateViews(String currentObject){
-            date_TXT.setText(currentObject);
-        }
-        void bindComplainViews(String currentObject){
-            complain_TXT.setText(currentObject);
-        }
+
 
 
     }
