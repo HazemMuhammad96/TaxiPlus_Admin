@@ -8,8 +8,8 @@ public class Driver extends User {
 
     }
 
-    public Driver( String name, String phone, String car) {
-        super(name, phone);
+    public Driver(String id, String name, String phone, String car) {
+        super(id, name, phone);
         this.car = car;
     }
 
@@ -19,13 +19,5 @@ public class Driver extends User {
 
     public void setCar(String car) {
         this.car = car;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

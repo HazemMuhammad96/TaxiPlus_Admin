@@ -43,12 +43,12 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-        CarDataSource car = new CarDataSource();
+//        CarDataSource car = new CarDataSource();
         DriverDataSource driver=new DriverDataSource();
-        car.addCar(new Car("3arbyaaaa" , "123" , "red"));
-        driver.addDriver(new Driver("ziad","12313123","toyota"));
-        car.getCars();
-        car.getCarsById("OgfNWmZyrUu5rLGDEg79");
+//        car.addCar(new Car("3arbyaaaa" , "123" , "red"));
+        driver.addDriver(new Driver("1","Hobaaa","011" , "Caaaar"));
+//        car.getCars();
+//        car.getCarsById("OgfNWmZyrUu5rLGDEg79");
     }
 
     @Override
