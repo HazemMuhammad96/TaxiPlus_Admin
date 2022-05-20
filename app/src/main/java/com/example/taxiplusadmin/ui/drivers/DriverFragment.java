@@ -29,7 +29,7 @@ public class DriverFragment extends Fragment {
     public DriverFragment() {
         super(R.layout.fragment_drivers);
     }
-    ArrayList<Driver>drivers=new ArrayList<>();
+    ArrayList<Driver>drivers;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -44,6 +44,7 @@ public class DriverFragment extends Fragment {
 
   void initializeArrayList(@NonNull View view){
       DriverDataSource.mCollection.get().addOnSuccessListener(S1 -> {
+          drivers=new ArrayList<>();
           for (QueryDocumentSnapshot document : S1) {
               drivers.add(document.toObject(Driver.class));
               Log.d(TAG, document.toObject(Driver.class).toString());

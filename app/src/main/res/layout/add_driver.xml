@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:text="Enter Driver"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +101,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/emailInput" />
 
-        <EditText
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            android:id="@+id/CheckCar"
+
+            app:layout_constraintBottom_toTopOf="@+id/carInput"
+
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't Have A Car ?"
+            app:layout_constraintEnd_toEndOf="@+id/CheckCar"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintBottom_toTopOf="@id/carInput"
+            android:paddingVertical="15dp"
+
+            />
+        <Spinner
             android:id="@+id/carInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -113,6 +136,30 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+
+        <TextView
+            android:paddingVertical="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TXTDRIVER"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/carInput"
+            app:layout_constraintBottom_toTopOf="@+id/DriverCar"
+            android:text="Your Car Brand"
+
+
+            />
+        <EditText
+            android:paddingVertical="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/DriverCar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/TXTDRIVER"
+            app:layout_constraintBottom_toTopOf="@+id/addButton"
+
+
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

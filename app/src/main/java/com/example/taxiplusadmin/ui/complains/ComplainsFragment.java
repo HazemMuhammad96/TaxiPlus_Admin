@@ -32,13 +32,17 @@ public class ComplainsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_complains,container,false);
+
         initialize(view);
         return view;
     }
 
     void initialize(View view) {
+
         ComplainsDataSource.mCollection.get().addOnSuccessListener(S1 -> {
+            complainsList = new ArrayList<>();
             for (QueryDocumentSnapshot document : S1) {
                 complainsList.add(document.toObject(Complaint.class));
                 Log.d(TAG, document.toObject(Car.class).toString());

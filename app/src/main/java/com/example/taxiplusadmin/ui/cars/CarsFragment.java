@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class CarsFragment extends Fragment {
 
     private static final String TAG = "CAR" ;
-    ArrayList<Car>car=new ArrayList<>();
+    ArrayList<Car>car;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class CarsFragment extends Fragment {
 
     void initialize(View view){
         CarDataSource.mCollection.get().addOnSuccessListener(S1 -> {
+            car=new ArrayList<>();
             for (QueryDocumentSnapshot document : S1) {
                car.add(document.toObject(Car.class));
                 Log.d(TAG, document.toObject(Car.class).toString());

@@ -37,7 +37,11 @@ public class AddCarFragment extends Fragment {
                     Toast.LENGTH_SHORT);
 
             toast.show();
-//
+            carBrandInput.setText("");
+            licenceNumberInput.setText("");
+            carColorInput.setText("");
+
+
         });
     }
 }

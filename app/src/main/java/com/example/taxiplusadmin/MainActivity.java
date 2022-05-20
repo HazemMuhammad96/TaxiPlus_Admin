@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
   // CarDataSource car = new CarDataSource();
-        ComplainsDataSource complain = new ComplainsDataSource();
-        complain.addComplain(new Complaint("Wael a" , "1/1/2000" , "Mohab" , "Wael b " , "re7la sa3eda"));
+        //ComplainsDataSource complain = new ComplainsDataSource();
+        //complain.addComplain(new Complaint("Wael a" , "1/1/2000" , "Mohab" , "Wael b " , "re7la sa3eda"));
     }
 
     @Override
