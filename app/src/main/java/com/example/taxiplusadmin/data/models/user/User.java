@@ -6,15 +6,11 @@ import java.util.List;
 
 
 public class User {
-    @Exclude
-    protected String id;
-    @Exclude
+
+
     protected String name;
-    @Exclude
     protected String email;
-    @Exclude
     protected String phone;
-    @Exclude
     protected String profileImageUri;
     protected float rating;
     protected List<TripInfo> previousTrips;
@@ -28,8 +24,8 @@ public class User {
         this.type = type;
     }
 
-    public User(String id, String name, String phone) {
-        this.id = id;
+    public User(String email, String name, String phone) {
+        this.email=email;
         this.name = name;
         this.phone = phone;
     }
@@ -54,13 +50,6 @@ public class User {
         this.previousTrips = previousTrips;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

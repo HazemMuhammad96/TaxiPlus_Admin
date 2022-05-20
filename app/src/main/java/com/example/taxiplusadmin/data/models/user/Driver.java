@@ -8,8 +8,8 @@ public class Driver extends User {
 
     }
 
-    public Driver(String id, String name, String phone, String car) {
-        super(id, name, phone);
+    public Driver(String email, String name, String phone, String car) {
+        super(email, name, phone);
         this.car = car;
     }
 

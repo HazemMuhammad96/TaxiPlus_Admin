@@ -9,7 +9,11 @@
         android:id="@+id/nav_drivers"
         android:name="com.example.taxiplusadmin.ui.drivers.DriverFragment"
         android:label="Drivers List"
-        tools:layout="@layout/fragment_drivers" />
+        tools:layout="@layout/fragment_drivers" >
+        <action
+            android:id="@+id/action_nav_drivers_to_addDriver"
+            app:destination="@id/addDriver" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_drivers_requests"
@@ -21,13 +25,26 @@
         android:id="@+id/nav_cars"
         android:name="com.example.taxiplusadmin.ui.cars.CarsFragment"
         android:label="Cars List"
-        tools:layout="@layout/fragment_cars" />
+        tools:layout="@layout/fragment_cars" >
+        <action
+            android:id="@+id/action_nav_cars_to_addCarFragment"
+            app:destination="@id/addCarFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_complains"
         android:name="com.example.taxiplusadmin.ui.complains.ComplainsFragment"
         android:label="Complains List"
         tools:layout="@layout/fragment_complains" />
+    <fragment
+        android:id="@+id/addDriver"
+        android:name="com.example.taxiplusadmin.AddDriverFragment"
+        android:label="fragment_add_driver"
+        tools:layout="@layout/fragment_add_driver" />
+    <fragment
+        android:id="@+id/addCarFragment"
+        android:name="com.example.taxiplusadmin.ui.cars.AddCarFragment"
+        android:label="AddCarFragment" />
 
 
 </navigation>
