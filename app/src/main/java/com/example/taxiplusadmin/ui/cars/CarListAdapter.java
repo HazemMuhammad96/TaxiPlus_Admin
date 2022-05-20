@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.taxiplusadmin.R;
-import com.example.taxiplusadmin.data.models.Car;
+import com.example.taxiplusadmin.data.models.car.Car;
 
 import java.util.ArrayList;
 

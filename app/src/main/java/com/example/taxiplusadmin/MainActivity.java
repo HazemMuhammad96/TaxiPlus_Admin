@@ -1,12 +1,12 @@
 package com.example.taxiplusadmin;
 
 import android.os.Bundle;
-import android.view.View;
 import android.view.Menu;
 
-import com.example.taxiplusadmin.data.models.Car;
-import com.example.taxiplusadmin.data.models.CarDataSource;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.taxiplusadmin.data.models.car.Car;
+import com.example.taxiplusadmin.data.models.car.CarDataSource;
+import com.example.taxiplusadmin.data.models.user.Driver;
+import com.example.taxiplusadmin.data.models.user.DriverDataSource;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -44,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
         CarDataSource car = new CarDataSource();
+        DriverDataSource driver=new DriverDataSource();
         car.addCar(new Car("3arbyaaaa" , "123" , "red"));
+        driver.addDriver(new Driver("ziad","12313123","toyota"));
         car.getCars();
         car.getCarsById("OgfNWmZyrUu5rLGDEg79");
     }

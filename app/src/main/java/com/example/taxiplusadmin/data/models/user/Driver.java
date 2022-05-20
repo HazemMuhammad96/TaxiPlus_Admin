@@ -1,17 +1,31 @@
 package com.example.taxiplusadmin.data.models.user;
 
 public class Driver extends User {
-    private String carID;
+
+    String car;
 
     public Driver() {
-        super();
+
     }
 
-    public String getCarID() {
-        return carID;
+    public Driver( String name, String phone, String car) {
+        super(name, phone);
+        this.car = car;
     }
 
-    public void setCarID(String carID) {
-        this.carID = carID;
+    public String getCar() {
+        return car;
+    }
+
+    public void setCar(String car) {
+        this.car = car;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

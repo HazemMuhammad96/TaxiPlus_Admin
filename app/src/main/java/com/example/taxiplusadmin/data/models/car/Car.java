@@ -1,4 +1,4 @@
-package com.example.taxiplusadmin.data.models;
+package com.example.taxiplusadmin.data.models.car;
 
 public class Car {
     String carBrand;
