@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.taxiplusadmin.R;
+import com.example.taxiplusadmin.data.models.Car;
 
 import java.util.ArrayList;
 
