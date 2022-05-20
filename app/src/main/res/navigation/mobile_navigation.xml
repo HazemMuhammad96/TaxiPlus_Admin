@@ -45,6 +45,10 @@
         android:id="@+id/addCarFragment"
         android:name="com.example.taxiplusadmin.ui.cars.AddCarFragment"
         android:label="AddCarFragment" />
+    <fragment
+        android:id="@+id/complainView"
+        android:name="com.example.taxiplusadmin.ui.complains.ComplainView"
+        android:label="ComplainView" />
 
 
 </navigation>

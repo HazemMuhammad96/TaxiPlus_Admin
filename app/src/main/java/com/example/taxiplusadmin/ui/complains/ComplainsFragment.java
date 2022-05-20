@@ -1,6 +1,7 @@
 package com.example.taxiplusadmin.ui.complains;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,11 +13,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.taxiplusadmin.R;
+import com.example.taxiplusadmin.data.models.car.Car;
+import com.example.taxiplusadmin.data.models.car.CarDataSource;
+import com.example.taxiplusadmin.ui.cars.CarListAdapter;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 
 
 public class ComplainsFragment extends Fragment {
+    private static final String TAG = "Complains";
     ComplainsListAdapter Adapter;
     ArrayList<Complaint> complainsList = new ArrayList<>();
     public ComplainsFragment() {
@@ -27,20 +33,22 @@ public class ComplainsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_complains,container,false);
-        initialize();
-        Adapter=new ComplainsListAdapter(complainsList);
-        RecyclerView recyclerView = view.findViewById(R.id.ComplainRView);
-        recyclerView.setAdapter(Adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        initialize(view);
         return view;
     }
 
-    void initialize() {
-        complainsList.add(new Complaint(30 , "Wael 5awl" , "1/1/2000" , 10 , "Mohab"));
-        complainsList.add(new Complaint(20 , "Wael 5awl" , "1/1/2000" , 10 , "Mohab"));
-        complainsList.add(new Complaint(10 , "Wael 5awl" , "1/1/2000" , 10 , "Mohab"));
-//        this.name.add("Boshkash");
-//        this.Date.add("4532123");
-//        this.Complain.add("Wael aboh zabet");
+    void initialize(View view) {
+        ComplainsDataSource.mCollection.get().addOnSuccessListener(S1 -> {
+            for (QueryDocumentSnapshot document : S1) {
+                complainsList.add(document.toObject(Complaint.class));
+                Log.d(TAG, document.toObject(Car.class).toString());
+            }
+            Adapter=new ComplainsListAdapter(complainsList);
+            RecyclerView recyclerView = view.findViewById(R.id.ComplainRView);
+            recyclerView.setAdapter(Adapter);
+            recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+
+        });
     }
-}
+
+    }

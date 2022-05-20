@@ -7,6 +7,8 @@ import com.example.taxiplusadmin.data.models.car.Car;
 import com.example.taxiplusadmin.data.models.car.CarDataSource;
 import com.example.taxiplusadmin.data.models.user.Driver;
 import com.example.taxiplusadmin.data.models.user.DriverDataSource;
+import com.example.taxiplusadmin.ui.complains.ComplainsDataSource;
+import com.example.taxiplusadmin.ui.complains.Complaint;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -44,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
   // CarDataSource car = new CarDataSource();
-
+        ComplainsDataSource complain = new ComplainsDataSource();
+        complain.addComplain(new Complaint("Wael a" , "1/1/2000" , "Mohab" , "Wael b " , "re7la sa3eda"));
     }
 
     @Override

@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.example.taxiplusadmin.data.models.user.Driver;
 import com.example.taxiplusadmin.data.models.user.DriverDataSource;
 
@@ -46,7 +47,7 @@ public class AddDriverFragment extends Fragment {
             DriverDataSource driver=new DriverDataSource();
             driver.addDriver(new Driver(email,name,phone,car));
             Toast toast = Toast.makeText(getContext(),
-                    "succeed",
+                    "Succeeded",
                     Toast.LENGTH_SHORT);
 
             toast.show();
