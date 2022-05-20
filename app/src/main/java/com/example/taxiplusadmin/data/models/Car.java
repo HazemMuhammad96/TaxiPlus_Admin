@@ -4,17 +4,9 @@ public class Car {
     String carBrand;
     String licenseNumber;
     String color;
-    String carID;
-
     public Car() {}
 
-    public String getCarID() {
-        return carID;
-    }
 
-    public void setCarID(String carID) {
-        this.carID = carID;
-    }
 
     public Car(String carBrand, String licenseNumber) {
         this.carBrand = carBrand;

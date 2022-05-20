@@ -1,6 +1,7 @@
 package com.example.taxiplusadmin.ui.cars;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.taxiplusadmin.R;
 import com.example.taxiplusadmin.data.models.Car;
+import com.example.taxiplusadmin.data.models.CarDataSource;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 
@@ -33,10 +36,11 @@ public class CarsFragment extends Fragment {
     }
 
     void initialize(){
-        car.add(new Car("heyundai","1234"));
-        car.add(new Car("BMW","25353"));
-        car.add(new Car("Mercedes","2123"));
-
+        CarDataSource.mCollection.get().addOnSuccessListener(S1 -> {
+            for (QueryDocumentSnapshot document : S1) {
+               car.add(document.toObject(Car.class));
+            }
+        });
 
     }
 
