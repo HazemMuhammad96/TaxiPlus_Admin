@@ -38,7 +38,8 @@ public class TripInfo {
     }
 
     public void setPickupPoint(LatLng pickupPoint) {
-        this.pickupPoint = pickupPoint;
+        if (pickupPoint != null)
+            this.pickupPoint = pickupPoint;
     }
 
     public LatLng getDestination() {
